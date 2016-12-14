@@ -1,4 +1,4 @@
-# OBEC Admin Panel
+# IT Admin Panel
 
 This project is to create a custom IT administration tool for keeping a consistently configured network
 

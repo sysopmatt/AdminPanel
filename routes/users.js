@@ -2,6 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 /*
+ * GET main page.
+ */
+router.get('/', function(req, res) {
+    res.render( 'users', {title: 'User administration' });
+});
+
+/*
  * GET userlist.
  */
 router.get('/userlist', function(req, res) {

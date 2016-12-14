@@ -62,10 +62,17 @@ function showUserInfo(event) {
     var thisUserObject = userListData[arrayPosition];
 
     //Populate Info Box
+    $('#userInfoGivenName').text(thisUserObject.GivenName);
+    $('#userInfoSurname').text(thisUserObject.Surname);
+    $('#userInfoEmail').text(thisUserObject.mail);
     $('#userInfoUserName').text(thisUserObject.samAccountName);
     $('#userInfoDepartment').text(thisUserObject.department);
     $('#userInfoTelephoneNumber').text(thisUserObject.telephoneNumber);
+    $('#userInfoExtension').text(thisUserObject.ipPhone);
+    $('#userInfoMobile').text(thisUserObject.mobile);
     $('#userInfoLocation').text(thisUserObject.physicalDeliveryOfficeName);
+    $('#userInfoTitle').text(thisUserObject.title);
+    
 
 };
 
@@ -84,12 +91,16 @@ function addUser(event) {
 
         // If it is, compile all user info into one object
         var newUser = {
-            'username': $('#addUser fieldset input#inputUserName').val(),
-            'email': $('#addUser fieldset input#inputUserEmail').val(),
-            'fullname': $('#addUser fieldset input#inputUserFullname').val(),
-            'age': $('#addUser fieldset input#inputUserAge').val(),
-            'location': $('#addUser fieldset input#inputUserLocation').val(),
-            'gender': $('#addUser fieldset input#inputUserGender').val()
+            'GivenName': $('#addUser fieldset input#inputUserGivenName').val(),
+            'Surname': $('#addUser fieldset input#inputUserSurname').val(),
+            'mail': $('#addUser fieldset input#inputUserEmail').val(),
+            'samAccountName': $('#addUser fieldset input#inputUserUserName').val(),
+            'department': $('#addUser fieldset input#inputUserDepartment').val(),
+            'telephoneNumber': $('#addUser fieldset input#inputUserTelephoneNumber').val(),
+            'ipPhone': $('#addUser fieldset input#inputUserExtension').val(),
+            'mobile': $('#addUser fieldset input#inputUserMobile').val(),
+            'physicalDeliverOfficeName': $('#addUser fieldset input#inputUserLocation').val(),
+            'title': $('#addUser fieldset input#inputUserTitle').val()
         }
 
         // Use AJAX to post the object to our adduser service

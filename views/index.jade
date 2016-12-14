@@ -2,7 +2,7 @@ extends layout
 
 block content
     h1= title
-    p Welcome to our test
+    p Welcome to our custom control panel
 
     // Wrapper
     #wrapper
@@ -11,17 +11,30 @@ block content
         #userInfo
             h2 User Info
             p
-                strong User Name:
-                |  <span id='userInfoUserName'></span>
+                strong Name:
+                |  <span id='userInfoGivenName'></span> <span id='userInfoSurname'></span>
+                br
+                strong Email Address:
+                |  <span id='userInfoEmail'></span>
                 br
                 strong Department:
                 |  <span id='userInfoDepartment'></span>
                 br
-                strong Direct Dial:
-                |  <span id='userInfoTelephoneNumber'></span>
+                strong Title:
+                |  <span id='userInfoTitle'></span>
                 br
                 strong Location:
                 |  <span id='userInfoLocation'></span>
+                br
+                strong Direct Dial:
+                |  <span id='userInfoTelephoneNumber'></span>
+                br
+                strong Extension:
+                |  <span id='userInfoExtension'></span>
+                br
+                strong Mobile:
+                |  <span id='userInfoMobile'></span>
+                
         // /USER INFO
 
         // USER LIST
@@ -39,14 +52,19 @@ block content
         h2 Add User
         #addUser
             fieldset
-                input#inputUserName(type='text', placeholder='Username')
+                input#inputUserGivenName(type='text', placeholder='First')
+                input#inputUserSurname(type='text', placeholder='Last')
+                br
+                input#inputUserDepartment(type='text', placeholder='Department')
+                input#inputUserTitle(type='text', placeholder='Title')
+                br
+                input#inputUserTelephoneNumber(type='text', placeholder='Direct Dial')
+                input#inputUserExtension(type='text', placeholder='Extension')
+                br
+                input#inputUserMobile(type='text', placeholder='Mobile')
+                input#inputUserUserName(type='text', placeholder='UserName')
+                br
                 input#inputUserEmail(type='text', placeholder='Email')
-                br
-                input#inputUserFullname(type='text', placeholder='Full Name')
-                input#inputUserAge(type='text', placeholder='Age')
-                br
-                input#inputUserLocation(type='text', placeholder='Location')
-                input#inputUserGender(type='text', placeholder='gender')
                 br
                 button#btnAddUser Add User
         // /ADD USER

@@ -35,8 +35,8 @@ function populateTable() {
         // For each item in our JSON, add a table row and cells to the content string
         $.each(data, function(){
             tableContent += '<tr>';
-            tableContent += '<td><a href="#" class="linkshowuser" rel="' + this.username + '" title="Show Details">' + this.username + '</a></td>';
-            tableContent += '<td>' + this.email + '</td>';
+            tableContent += '<td><a href="#" class="linkshowuser" rel="' + this.samAccountName + '" title="Show Details">' + this.GivenName + ' ' + this.Surname + '</a></td>';
+            tableContent += '<td>' + this.mail + '</td>';
             tableContent += '<td><a href="#" class="linkdeleteuser" rel="' + this._id + '">delete</a></td>';
             tableContent += '</tr>';
         });
@@ -56,16 +56,16 @@ function showUserInfo(event) {
     var thisUserName = $(this).attr('rel');
 
     // Get Index of object based on id value
-    var arrayPosition = userListData.map(function(arrayItem) { return arrayItem.username; }).indexOf(thisUserName);
+    var arrayPosition = userListData.map(function(arrayItem) { return arrayItem.samAccountName; }).indexOf(thisUserName);
 
     // Get our User Object
     var thisUserObject = userListData[arrayPosition];
 
     //Populate Info Box
-    $('#userInfoName').text(thisUserObject.fullname);
-    $('#userInfoAge').text(thisUserObject.age);
-    $('#userInfoGender').text(thisUserObject.gender);
-    $('#userInfoLocation').text(thisUserObject.location);
+    $('#userInfoUserName').text(thisUserObject.samAccountName);
+    $('#userInfoDepartment').text(thisUserObject.department);
+    $('#userInfoTelephoneNumber').text(thisUserObject.telephoneNumber);
+    $('#userInfoLocation').text(thisUserObject.physicalDeliveryOfficeName);
 
 };
 

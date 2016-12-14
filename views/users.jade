@@ -2,13 +2,18 @@ extends layout
 
 block content
     h1= title
-    p Welcome to our custom control panel
+    h3 
+        a(href='/#') Main
+        |  > 
+        a(href='/users/#') Users
+    p
+    hr
 
     // Wrapper
     #wrapper
 
         // USER INFO
-        #userInfo
+        #leftPanel
             h2 User Info
             p
                 strong Name:
@@ -35,38 +40,42 @@ block content
                 strong Mobile:
                 |  <span id='userInfoMobile'></span>
                 
+                
+            h2 Add User
+            #addUser
+                fieldset
+                    input#inputUserGivenName(type='text', placeholder='First')
+                    input#inputUserSurname(type='text', placeholder='Last')
+                    br
+                    input#inputUserDepartment(type='text', placeholder='Department')
+                    input#inputUserTitle(type='text', placeholder='Title')
+                    br
+                    input#inputUserTelephoneNumber(type='text', placeholder='Direct Dial')
+                    input#inputUserExtension(type='text', placeholder='Extension')
+                    br
+                    input#inputUserMobile(type='text', placeholder='Mobile')
+                    input#inputUserUserName(type='text', placeholder='UserName')
+                    br
+                    input#inputUserEmail(type='text', placeholder='Email')
+                    br
+                    button#btnAddUser Add User
+    
+                
+                
         // /USER INFO
 
         // USER LIST
-        h2 User List
-        #userList
+        #mainArea
+            h2 User List
             table
                 thead
                     th UserName
                     th Email
                     th Delete?
                 tbody
+            
         // /USER LIST
-
-        // ADD USER
-        h2 Add User
-        #addUser
-            fieldset
-                input#inputUserGivenName(type='text', placeholder='First')
-                input#inputUserSurname(type='text', placeholder='Last')
-                br
-                input#inputUserDepartment(type='text', placeholder='Department')
-                input#inputUserTitle(type='text', placeholder='Title')
-                br
-                input#inputUserTelephoneNumber(type='text', placeholder='Direct Dial')
-                input#inputUserExtension(type='text', placeholder='Extension')
-                br
-                input#inputUserMobile(type='text', placeholder='Mobile')
-                input#inputUserUserName(type='text', placeholder='UserName')
-                br
-                input#inputUserEmail(type='text', placeholder='Email')
-                br
-                button#btnAddUser Add User
-        // /ADD USER
+        
+        
 
     // /WRAPPER

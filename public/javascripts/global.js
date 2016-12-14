@@ -8,13 +8,13 @@ $(document).ready(function() {
     populateTable();
 
     // Username link click
-    $('#userList table tbody').on('click', 'td a.linkshowuser', showUserInfo);
+    $('#mainArea table tbody').on('click', 'td a.linkshowuser', showUserInfo);
 
     // Add User button click
     $('#btnAddUser').on('click', addUser);
 
     // Delete User link click
-    $('#userList table tbody').on('click', 'td a.linkdeleteuser', deleteUser);
+    $('#mainArea table tbody').on('click', 'td a.linkdeleteuser', deleteUser);
 
 });
 
@@ -42,7 +42,7 @@ function populateTable() {
         });
 
         // Inject the whole content string into our existing HTML table
-        $('#userList table tbody').html(tableContent);
+        $('#mainArea table tbody').html(tableContent);
     });
 };
 

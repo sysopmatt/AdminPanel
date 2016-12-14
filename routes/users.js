@@ -1,12 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-/*
- * GET main page.
- */
-router.get('/', function(req, res) {
-    res.render( 'users', {title: 'User administration' });
-});
+var siteTitle = 'OBEC Administration Panel';
 
 /*
  * GET userlist.
@@ -18,6 +13,7 @@ router.get('/userlist', function(req, res) {
         res.json(docs);
     });
 });
+
 
 /*
  * POST to adduser.
@@ -43,5 +39,8 @@ router.delete('/deleteuser/:id', function(req, res) {
         res.send((err === null) ? { msg: '' } : { msg:'error: ' + err });
     });
 });
+
+
+
 
 module.exports = router;
